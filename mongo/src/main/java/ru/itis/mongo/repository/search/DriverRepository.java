@@ -13,8 +13,7 @@ public interface DriverRepository extends MongoRepository<Driver, String>, Query
 
     @Override
     default void customize(QuerydslBindings bindings, QDriver qDriver) {
-        bindings.bind(qDriver.cars.any().colour).as("cars.color").first(
-                StringExpression::containsIgnoreCase
-        );
+        bindings.bind(qDriver.cars.any().colour).as("cars.colour").first(StringExpression::containsIgnoreCase);
+        bindings.bind(qDriver.name).first(StringExpression::containsIgnoreCase);
     }
 }

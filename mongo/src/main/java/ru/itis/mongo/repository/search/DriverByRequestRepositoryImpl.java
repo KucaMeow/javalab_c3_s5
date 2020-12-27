@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ru.itis.mongo.dto.DriverDto;
 import ru.itis.mongo.dto.DriverRequest;
-import ru.itis.mongo.model.Driver;
-import ru.itis.mongo.repository.search.DriverRepository;
 
 import static ru.itis.mongo.model.QDriver.driver;
 
@@ -36,7 +34,9 @@ public class DriverByRequestRepositoryImpl implements DriverByRequestRepository{
             predicate.or(driver.name.containsIgnoreCase(driverRequest.getName()));
         }
         List<DriverDto> toR = new ArrayList<>();
-        driverRepository.findAll(predicate.getValue()).forEach(a -> toR.add(DriverDto.from(a)));
+        if (predicate.getValue() != null) {
+            driverRepository.findAll(predicate.getValue()).forEach(a -> toR.add(DriverDto.from(a)));
+        }
 
         return toR;
     }

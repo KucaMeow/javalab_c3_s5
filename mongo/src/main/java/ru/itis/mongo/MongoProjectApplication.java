@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import ru.itis.mongo.model.Car;
 import ru.itis.mongo.model.Driver;
 import ru.itis.mongo.repository.jpa.CarRepository;
-import ru.itis.mongo.repository.jpa.DriverRepository;
+import ru.itis.mongo.repository.search.DriverRepository;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -54,7 +54,7 @@ public class MongoProjectApplication {
         Driver driver2 = Driver.builder()
                 .cars(Arrays.asList(car1, car3))
                 .name("Felix")
-                .cash(500)
+                .cash(500.0)
                 .build();
 
         driverRepository.saveAll(Arrays.asList(driver1, driver2));*/

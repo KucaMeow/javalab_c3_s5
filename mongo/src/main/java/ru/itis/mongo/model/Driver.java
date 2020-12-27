@@ -13,7 +13,6 @@ import javax.persistence.Entity;
 import java.util.List;
 
 
-@Entity
 @Document(collection = "drivers")
 @Data
 @AllArgsConstructor

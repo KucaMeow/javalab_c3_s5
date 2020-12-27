@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.Entity;
 import java.util.List;
 
-@Entity
 @Document(collection = "cars")
 @Data
 @AllArgsConstructor

@@ -1,0 +1,14 @@
+//Возвращает одного водителя
+GET localhost/driver/search/r?name=lex
+###
+//Возвращает всех водителей
+GET localhost/driver/search/r?name=x
+###
+###
+###
+GET localhost/driver/search/p?name=lex
+###
+GET localhost/driver/search/p?name=x
+###
+//Не работает :С
+GET localhost/driver/search/p?cars.colour=red

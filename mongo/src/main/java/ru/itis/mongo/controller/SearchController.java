@@ -35,7 +35,7 @@ public class SearchController {
             bindings = DriverRepository.class) Predicate predicate) {
         return ResponseEntity.ok(
                 StreamSupport.stream(driverRepository.findAll(predicate).spliterator(), true)
-                .map(DriverDto::from)
+                        .map(DriverDto::from)
                         .collect(Collectors.toList())
         );
     }
