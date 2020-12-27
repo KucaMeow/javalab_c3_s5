@@ -1,0 +1,19 @@
+= Описание API по сервисам
+
+== Методы
+
+|===
+|Метод | Назначение
+|`fill-wheels`
+|Заполнить колеса
+|===
+
+=== Наполнение колес автомобиля
+
+.request
+
+include::{snippets}/fill_car_wheels/http-request.adoc[]
+
+.response
+
+include::{snippets}/fill_car_wheels/http-response.adoc[]
