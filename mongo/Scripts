@@ -1,0 +1,18 @@
+//Создаю бд test
+use test;
+
+//Создаю коллекцию tests и в ней новый объект с полем text = "Hello MongoDb"
+db.tests.insert({
+    text:"Hello MongoDb"
+});
+
+//Вывожу запись
+db.tests.find();
+
+//Ответ:
+//[
+//  {
+//    "_id": {"$oid": "5fe878ea6790f025f383c960"},
+//    "text": "Hello MongoDb"
+//  }
+//]
